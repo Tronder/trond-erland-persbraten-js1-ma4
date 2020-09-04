@@ -4,8 +4,7 @@ const text = document.querySelector('input');
 
 button.onclick = function () {
   event.preventDefault();
-  const checker = text.value;
-  const checkTrimmed = checker.trim();
+  const checkTrimmed = text.value.trim();
 
   if (checkTrimmed.length < 5) {
     error.style.display = 'inline';
