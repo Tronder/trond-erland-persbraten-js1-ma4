@@ -7,9 +7,14 @@ const id = params.get('id');
 const url = `https://api.rawg.io/api/games/${id}`;
 
 async function getDetails() {
-  const call = await fetch(url);
-  const json = await call.json();
-  detailsHtml(json);
+  try {
+    const call = await fetch(url);
+    const json = await call.json();
+
+    detailsHtml(json);
+  } catch {
+    container.innerHTML = 'An error occured';
+  }
 }
 
 getDetails();
